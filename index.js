@@ -8,7 +8,6 @@ import todoRoutes from './routes/todoRoutes.js';
 import reportRoutes from './routes/reportRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import cookieParser from 'cookie-parser';
-import serverless from 'serverless-http';
 
 
 const app = express();
@@ -20,10 +19,6 @@ allowedHeaders: 'Content-Type,Authorization',
 credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
-
-app.get('/', (req, res) => {
-  res.send('Server is running!');
-});
 
 app.use('/api/auth', authRoutes);
 app.use(EmployeeRoutes);
@@ -53,4 +48,3 @@ sequelize.sync({ alter: true }) // Menggunakan alter untuk memperbarui skema yan
     console.error('Unable to connect to the database:', error);
   });
 
-  export const handler = serverless(app);
