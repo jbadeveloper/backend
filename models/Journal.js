@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../config/Database.js';
 import Employee from './Employee.js';
 
-const Journal = sequelize.define('Journal', {
+const Journal = sequelize.define('journal', {
   journalID: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -30,6 +30,7 @@ const Journal = sequelize.define('Journal', {
   },
 }, {
   freezeTableName: true,
+  
 });
 
 Employee.hasMany(Journal, { foreignKey: 'employeeID' });

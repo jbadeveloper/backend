@@ -1,7 +1,7 @@
 import { Sequelize, DataTypes } from 'sequelize';
 import sequelize from '../config/Database.js';
 
-const Todo = sequelize.define('Todo', {
+const Todo = sequelize.define('todo', {
   todoID: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -11,7 +11,7 @@ const Todo = sequelize.define('Todo', {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
-      model: 'Employee', // Assuming 'Employee' is the table name
+      model: 'employee', // Assuming 'Employee' is the table name
       key: 'employeeID',
     },
   },

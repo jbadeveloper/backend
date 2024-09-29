@@ -4,7 +4,7 @@ import sequelize from '../config/Database.js';
 
 const { DataTypes } = Sequelize;
 
-const Employee = sequelize.define('Employee', {
+const Employee = sequelize.define('employee', {
   employeeID: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
